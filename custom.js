@@ -7,18 +7,4 @@ var flkty = new Flickity( '.main-carousel', {
 });
 
 
-
-$(function(){
-
-              var $container = $('masonry');
-
-              var reMasonry = function() {
-                $container.masonry();
-              };
-
-             $('.item').click(function(){
-                console.log("hey");
-              });
-            });
-
     
