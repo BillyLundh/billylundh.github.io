@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="http://w3bits.com/wp-content/themes/bits2/labs.css">
-    <link rel="stylesheet" href="flickety.css">
+    <link rel="stylesheet" href="flickety.css" media="screen">
 
 	<title>Portfolio</title>
 
@@ -28,7 +28,18 @@ var style = function(css) {
         e.appendChild(document.createTextNode(css));
     }
     document.getElementsByTagName('head')[0].appendChild(e);
-}
+};
+
+
+$(function(){
+    $( "#target" ).toggle(function() {
+      alert( "First handler for .toggle() called." );
+    }, function() {
+      alert( "Second handler for .toggle() called." );
+    });
+});
+
+
 </script>
 
 <style>
@@ -91,8 +102,8 @@ cursor: pointer;
 
 
 .large {
-  background: #084;
-  z-index: 1;
+  /*background: #084;*/
+  /*z-index: 1;*/
 }
 
 .title, .footer {
@@ -209,13 +220,19 @@ mark{
             Intervjuer iOS app.
             <br>
             <br>
-            This app handles video recording and user profiles and accounts and 
-            has a internal chat room using firebase.
-            <br>
-            <br>
-            This app is intended as a tool for develepers in ther recruting process, 
-            and a way for faster results as a jobseeker by recording video awnsers as you 
-            apply for a jobb. The app handlas all your data and notfies you if there's intrest from the employer.
+            On a internship from the studies at Malmö Yrkeshögskola.
+            I was at Cybercom Group and was assigned to a startup project
+            with a classmate. <br>
+            We then went above and beyond with the application we develped and had 10 weeks,
+            which we spent well and learned how to architect a full-scale application. 
+            We learned how to handle video recording, user profiles, authentication and backend database integration with firebase and custom controls and interfaces.
+            We also made a real-time chat function. <br>
+
+            During this time we also wanted to learn as much as we could
+            and made the without storyboards and completely programmatic. <br>
+
+            We did this in order to learn the parameters of 
+            functions better and better scaling between diffrent screen sizes.
 		</div>
 		<div class="item">
         <a target="_blank" href="http://www.bring4.com/">
@@ -223,18 +240,19 @@ mark{
             <br>
             Showcase of Intervjuer<br><br>
             This website is a showcase <br>
-            of a ios and react web app that <br>
-            works with firebase. <br><br>
-            This page is intended for explaining the concept <br>
+            of a ios and react web app that 
+            works with firebase. 
+            This page is intended for explaining the concept 
+            It was completely designed by me.
             </a>
 		</div>
 
 		<div class="item">
 			<br>
-            Some of my fravorite programing langues are: 
+            Some of my favorite programing langues are: 
             <br>
             <br>
-             Swift, Python, HTML5 & CSS3, Javascript, React.js. Arduino
+             Swift, Python, HTML5 & CSS3, Javascript, React.js. Arduino.
             <br>
 
 		</div>
@@ -242,21 +260,31 @@ mark{
             <img src="img/weatheribeacon.PNG" />
             <br/>
             <h3><mark>iBeacon Weather app</mark></h3>
-            An expiremental ibeacon app that tests monitering mode.
+            An experimental ibeacon app that tests monitoring mode.
             The idea is to have a beacon in the hallway and get notified
             about the weather on my way out from home.
-
+            <br>
+            I also managed to solve parsing data in a notification,
+            which I haven't seen before. It is very useful, because this means
+            you don't have to load up the app and get the relevant information 
+            straight away. When you want it.
         </div>
 	
 		<div class="item">
 			<img src="img/lisehemsida.png" />
             <br/>
-			Website created for musician Lise Kronér<br>
+			Website created for musician <br>
+            Lise Kronér coming soon -Nov-
 
 		</div>
 		<div class="item">
             <img src="img/knus.png" />
-            <h2>Café Knus Coffee card</h2>
+            <br>
+            Café Knus Coffee card <br><br>
+            A digital coffee card created for a café in Malmö.
+            The app let's users save up
+            and get the 10th cup for free. Special timed offers
+            are also offered in the app.
         </div>
 		<div class="item">
 			<iframe width="640" height="390" src="https://www.youtube.com/embed/cwGq-uy0bhI" frameborder="0" allowfullscreen></iframe>
@@ -267,6 +295,16 @@ mark{
 
         <div class="item">
             <a target="_blank" href="http://www.bring4.com/"><img src="img/hodie.jpg" /></a>
+            <br>
+            As the winners of a local hackathon hosted at Minc, me and two friends
+            got 2 months of office time and a small sum of money to develop a concept 
+            that we conceived at the event.
+            <br>
+            Our concept was a smart hoodie, that would sense your pulse and the environment 
+            around you. Emf exposure and wifi signals. The hoodie does that and converts the sensors input 
+            to a responsive music program. A arduino talks to a raspberry pi which has a script 
+            that runs pure data of the inputs and outputs music. I programmed this script and made the responsive music track. 
+
         </div>
 		<div class="item">
         <h3><mark>Freelance work</mark></h3>
@@ -276,11 +314,11 @@ mark{
             I do freelance work, complete design of websites and iOS applications.
             <br>
             <br>
-            I also do physical prototyping, design of hardware and iteractions with 
+            I also do physical prototyping, design of hardware and interactions with 
             sensors.
 		</div>
 		<div class="item">
-            <div class="main-carousel js-flickity" data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+            <div class="main-carousel js-flickity">
                   <div class="carousel-cell"><img src="img/IMG_6602.JPG" /></div>
                   <div class="carousel-cell"><img src="img/IMG_6897.JPG" /></div>
                   <div class="carousel-cell"><img src="img/IMG_6602.JPG" /></div>
@@ -299,6 +337,10 @@ mark{
         <div class="item">
             <img src="img/clear.png" />
             <p>Python parse script. </p>
+            This script was made by me and used in a project for a smart mirror.
+            It had different screens that parsed news headline information,
+            bus information and weather information. And activated by motion sensors.
+            A screen was attached behind a mirror in order to create the interface overlay.
         </div>
 	</div>
 </div>	
