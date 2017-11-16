@@ -30,7 +30,6 @@ var style = function(css) {
     document.getElementsByTagName('head')[0].appendChild(e);
 };
 
-
 </script>
 
 <style>
@@ -143,7 +142,28 @@ color: #888;
     padding-left: 40px;
 }
 
+.carousel {
+  background: #FAFAFA;
+}
 
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
 
 
 mark{
@@ -326,6 +346,14 @@ mark{
             <a href="https://www.yogile.com/c9h6f7qg/21t/share/?vsc=OTk4MzRlM">More images and screenshots</a>
             <br>
             <a href="https://intervjuer.herokuapp.com">Link to react app</a>
+        </div>
+
+        <div class="item">
+            <div class="main-carousel js-flickity" data-flickity='{ "imagesLoaded": true, "percentPosition": false }'>
+                  <img src="img/todoable1.png" />
+                  <img src="img/todoable2.png" />
+                  <img src="img/todoable3.png" />
+            </div>
         </div>
 
 	</div>
