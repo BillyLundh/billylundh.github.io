@@ -1,953 +1,355 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US" prefix="" class="">
 <head>
-  <!-- Theme Made By www.w3schools.com -->
-  <title>Orion Pedals</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+    	<link rel="stylesheet" href="flickety.css" media="screen">
+
+	<title>Portfolio</title>
 
 
+<script src="flickity.pkgd.min.js"></script>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="custom.js"></script>
 
- 
-<script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
-<!-- or -->
-<script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
+<script>var script = function(src) {
+    var e = document.createElement('script');
+    e.async = true;
+    e.src = src;
+    document.getElementsByTagName('head')[0].appendChild(e);
+};
 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-<script src="js/isotope.pkgd.min.js"></script>
-<script src="js/packery.pkgd.min.js"></script>
-
-<style>
-
-
-
-@font-face {
-  font-family: customFont;
-  src: url(Potra.ttf);
-}
-
-body {
-    font: 400 15px Lato, sans-serif;
-    line-height: 1.8;
-    color: lightskyblue;
-     background-image: linear-gradient(62deg, #000000 30%, #E0C3FC 90%);
-
-  }
-  h2 {
-    font: 1000 44px  customFont;
-    
-    text-transform: uppercase;
-    color: lightskyblue;
-    font-weight: 600;
-    margin-bottom: 30px;
-  }
-  h4 {
-
-    font-size: 19px;
-    line-height: 1.375em;
-    color: lightskyblue;
-    font-weight: 400;
-    margin-bottom: 30px;
-  }
-
-  li{
-
-    padding-top: 25px;
-  }
-  #products{
-    background: rgba(0,0,0, 0.4);
-  }
-
-  #contact{
-    padding-bottom: 400px;
-    background: rgba(0,0,0, 0.4);
-  }
-
-  #about{
-    padding-bottom: 400px;
-    background: rgba(0,0,200, 0.4);
-  }
-
-  #blog{
-    padding: 400px;
-  }
-
-  .card {
-    font: 1000 44px  customFont;
-  background:rgba(0, 0, 0, 0.4);
-  color: skyblue;
-  border-radius: 2px;
-  display: block;
-  
-  margin: 1rem;
-  position: relative;
-  padding: 25px;
-}
-
-  .jumbotron {
-    background-color: black;
-    color: lightskyblue;
-    padding: 200px 25px;
-    font-family: Montserrat, sans-serif;
-
-    background-image: url("img/workbenchnew.jpg");
-    height: 800px; /* You must set a specified height */
-    background-position: bottom; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
-  }
-  .container-fluid {
-    padding: 160px 50px;
-  }
-  .bg-grey {
-    background-color: #f6f6f6;
-  }
-  .logo-small {
-    color: #f4511e;
-    font-size: 50px;
-  }
-  .logo {
-    color: #f4511e;
-    font-size: 200px;
-  }
-  .thumbnail {
-    padding: 0 0 15px 0;
-    border: none;
-    border-radius: 0;
-    background-color: #f4511e;
-  }
-  .thumbnail img {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
-  }
-  .carousel-control.right, .carousel-control.left {
-    background-image: none;
-    color: #f4511e;
-  }
-  .carousel-indicators li {
-    border-color: #f4511e;
-  }
-  .carousel-indicators li.active {
-    background-color: #f4511e;
-  }
-  .item h4 {
-    font-size: 19px;
-    line-height: 1.375em;
-    font-weight: 400;
-    font-style: italic;
-    margin: 70px 0;
-  }
-  .item span {
-    font-style: normal;
-  }
-  .panel {
-    border: 1px solid #f4511e; 
-    border-radius:0 !important;
-    transition: box-shadow 0.5s;
-  }
-  .panel:hover {
-    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
-  .panel-footer .btn:hover {
-    border: 1px solid #f4511e;
-    background-color: #fff !important;
-    color: #f4511e;
-  }
-  .panel-heading {
-    color: #fff !important;
-    background-color: #f4511e !important;
-    padding: 25px;
-    border-bottom: 1px solid transparent;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-  .panel-footer {
-    background-color: white !important;
-  }
-  .panel-footer h3 {
-    font-size: 32px;
-  }
-  .panel-footer h4 {
-    color: #aaa;
-    font-size: 14px;
-  }
-  .panel-footer .btn {
-    margin: 15px 0;
-    background-color: #f4511e;
-    color: #fff;
-  }
-
-
-
-  .changefont{
-    font-family: Helvetica Light; 
-
-    
-  }
-
-
-  .smaller{
-    font-size: 20px; 
-
-    
-  }
-
-  .white{
-    color: #C1C7C9;
-  }
-
-  .navbar {
-     
-    margin-bottom: 0;
-    background-image: linear-gradient(62deg, #000000 30%, #E0C3FC 90%);
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-    font-family: Montserrat, sans-serif;
-    height: 100px;
-    
-  }
-  .navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
-    
-
-  }
-
-
-
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: lightskyblue !important;
-    background-color: rgba(255, 255, 255, 0.1) !important;
-  }
-  .navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-
-  }
-
-.navbar-custom {
-  height: 100px;
-}
-
-
-  footer .glyphicon {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #f4511e;
-  }
-  .slideanim {visibility:hidden;}
-  .slide {
-    animation-name: slide;
-    -webkit-animation-name: slide;
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    visibility: visible;
-  }
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
+var style = function(css) {
+    var e = document.createElement('style');
+    if(e.styleSheet){
+        e.styleSheet.cssText = css;
+    } else {
+        e.appendChild(document.createTextNode(css));
     }
-  }
-  @-webkit-keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .col-sm-4 {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .btn-lg {
-      width: 100%;
-      margin-bottom: 35px;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .logo {
-      font-size: 150px;
-    }
+    document.getElementsByTagName('head')[0].appendChild(e);
+};
 
-
-    .post-module {
-  position: relative;
-  z-index: 1;
-  display: block;
-  background: @white;
-  min-width: 270px;
-  height: 470px;
-  .box-shadow;
-  .transitions;
-  &:hover {
-    .box-shadow(@blur: 35px; @color: fade(@black, 30%););
-    .thumbnail {
-      img {
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        transform: scale(1.1);
-        opacity: .6;
-      }
-    }
-    .post-content {
-    }
-  }
-  .thumbnail {
-    background: @black;
-    height: 400px;
-    overflow: hidden;
-    .date {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 1;
-      background: @accent;
-      width: 55px;
-      height: 55px;
-      padding: 12.5px 0;
-      .border-radius(100%);
-      color: @white;
-      font-weight: 700;
-      text-align: center;
-      .box-size;
-      .day {
-        font-size: 18px;
-      }
-      .month {
-        font-size: 12px;
-        text-transform: uppercase;
-      }
-    }
-    img {
-      display: block;
-      width: 120%;
-      .transitions;
-    }
-  }
-  .post-content {
-    position: absolute;
-    bottom: 0;
-    background: @white;
-    width: 100%;
-    padding: 30px;
-    .box-size;
-    .transitions(@timing: cubic-bezier(.37,.75,.61,1.05));
-    .category {
-      position: absolute;
-      top: -34px;
-      left: 0;
-      background: @accent;
-      padding: 10px 15px;
-      color: @white;
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-    .title {
-      margin: 0;
-      padding: 0 0 10px;
-      color: @dark_gray;
-      font-size: 26px;
-      font-weight: 700;
-    }
-    .sub_title {
-      margin: 0;
-      padding: 0 0 20px;
-      color: @accent;
-      font-size: 20px;
-      font-weight: 400;
-    }
-    .description {
-      display: none;
-      color: @gray;
-      font-size: 14px;
-      line-height: 1.8em;
-    }
-    .post-meta {
-      margin: 30px 0 0;
-      color: @light_gray;
-      .timestamp {
-        margin: 0 16px 0 0;
-      }
-      a {
-        color: @light_gray;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-.hover {
-  &:extend(.post-module:hover all);
-  .post-content {
-    .description {
-      display: block !important;
-      height: auto !important;
-      opacity: 1 !important;
-    }
-  }
-}
-
-
-
-.container {
-  max-width: @container_width;
-  min-width: 640px;
-  margin: 0 auto;
-  &:before,
-  &:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-  .column {
-    width: 50%;
-    padding: 0 25px;
-    .box-size;
-    float: left;
-    .demo-title {
-      margin: 0 0 15px;
-      color: @gray;
-      font-size: 18px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-  }
-  .info {
-    width: 300px;
-    margin: 50px auto;
-    text-align: center;
-    h1 {
-      margin: 0 0 15px;
-      padding: 0;
-      font-size: 24px;
-      font-weight: bold;
-      color: @dark_gray;
-    }
-    span {
-      color: @gray;
-      font-size: 12px;
-      a {
-        color: @black;
-        text-decoration: none;
-      }
-      .fa {
-        color: @accent;
-      }
-    }
-  }
-}
-
-
-
-
-* { box-sizing: border-box; }
-
-/* force scrollbar */
-html { overflow-y: scroll; }
-
-body { font-family: sans-serif; }
-
-.grid {
-  background: #EEE;
-}
-
-/* item is invisible, but used for layout */
-.grid-item,
-.grid-sizer {
-  width: 20%;
-}
-
-.grid-item {
-  float: left;
-  height: 100px;
-}
-
-/* grid-item-content is visible, and transitions size */
-.grid-item-content {
-  width: 100%;
-  height: 100%;
-  background: #C09;
-  border: 2px solid hsla(0, 0%, 0%, 0.5);
-  -webkit-transition: width 0.4s, height 0.4s;
-          transition: width 0.4s, height 0.4s;
-}
-
-.grid-item:hover .grid-item-content {
-  background: #C90;
-  cursor: pointer;
-}
-
-/* both item and item content change size */
-.grid-item.is-expanded {
-  width: 60%;
-  height: 200px;
-  z-index: 2;
-}
-
-.grid-item.is-expanded .grid-item-content {
-  background: #0C9;
-}
-
-.card {
-    width: 250px;
-    border-radius: 10px
-}
-
-.card-img-top {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px
-}
-
-span.text-muted {
-    font-size: 12px
-}
-
-small.text-muted {
-    font-size: 8px
-}
-
-h5.mb-0 {
-    font-size: 1rem
-}
-
-small.ghj {
-    font-size: 9px
-}
-
-.mid {
-    background: #ECEDF1
-}
-
-h6.ml-1 {
-    font-size: 13px
-}
-
-small.key {
-    text-decoration: underline;
-    font-size: 9px;
-    cursor: pointer
-}
-
-.btn-danger {
-    color: #FFCBD2
-}
-
-.btn-danger:focus {
-    box-shadow: none
-}
-
-small.justify-content-center {
-    font-size: 9px;
-    cursor: pointer;
-    text-decoration: underline
-}
-
-@media screen and (max-width:600px) {
-    .col-sm-4 {
-        margin-bottom: 50px
-    }
-}
-
-.center {
-  text-align: center;
-  border: 3px solid green;
-}
-
-  }
-</style>
-  
-</head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-
-      <a class="navbar-brand" href="index.html">
-              <img src="img/orion.png" width="150" height="75" alt="">
-            </a>
-      
-    </div>
-    <div class="collapse navbar-collapse " id="myNavbar" >
-      <ul class="nav navbar-nav  navbar-right">
-        <li><a href="#products">PRODUCTS</a></li>
-        <li><a href="#blog">BLOG</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="jumbotron text-center">
-  <div class="card">
-  <h1>Orion Pedals</h1> 
-  <h3 style="color:white; font-size: 28px;">Handwired guitar effects</h3> 
-  </div>
-</div>
-
-<!-- Container (About Section) -->
-<div id="products" class="container-fluid">
-  <div class="card">
-  <h2 class="text-center">One knob Series</h2>
-
-  <h2 class="text-center smaller">-Handwired</h2>
-  <h2 class="text-center smaller">-Handpicked components</h2>
-<h2 class="text-center smaller">-Unique design</h2>
-</div>
-
-  <div class="container-fluid d-flex justify-content-center">
-
-
-    <div class="row mt-5">
-
-
-        <div class="col-sm-4">
-            <div class="card"> <img src="img/jfetwired.jpg" class="card-img-top" width="100%">
-
-              <hr class="mt-2 mx-3">
-
-                <div class="card-body pt-0 px-0">
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> 
-
-                      <div class="d-flex flex-column"><span class="text-muted white" >Jfet boost</span>
-                        
-                      
-                    
-                        <small>&nbsp;90&euro;</small>
-                      </div>
-                    </div>
-                    <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
-                        
-
-                        <small class="text-muted mt-1">Clean tube like transparent boost</small>
-
-                        <hr class="mt-2 mx-3">
-                        
-                    
-                    <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>BUILD & PRICE</small></button></div>
-                </div>
-              </div>
-            </div>
-        </div>
-
-
-
-
-<div class="row mt-5">
-        <div class="col-sm-4">
-            <div class="card"> <img src="img/jfetwired.jpg" class="card-img-top" width="100%">
-
-              <hr class="mt-2 mx-3">
-
-                <div class="card-body pt-0 px-0">
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> 
-
-                      <div class="d-flex flex-column"><span class="text-muted white">Raw Fuzz</span>
-                        
-                      
-                    
-                        <small>&nbsp;110&euro;</small>
-                      </div>
-                    </div>
-                    <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
-                        
-
-                        <h3 class="white">Insprired by the lesser known muff fuzz, it has a unique raw fuzz sound, and is very responive. Great for rythm and riffs, cuts trough the mix</h3>
-
-                        <hr class="mt-2 mx-3">
-                        
-                    
-                    <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>BUILD & PRICE</small></button></div>
-                </div>
-              </div>
-            </div>
-        </div>
-
-       
-
-
-
-        <div class="row mt-5">
-        <div class="col-sm-4">
-            <div class="card"> <img src="img/jfetwired.jpg" class="card-img-top" width="100%">
-
-              <hr class="mt-2 mx-3">
-
-                <div class="card-body pt-0 px-0">
-                    <div class="d-flex flex-row justify-content-between mb-0 px-3"> 
-
-                      <div class="d-flex flex-column"><span class="text-muted white">Green Ringer</span>
-                        
-                      
-                    
-                        <small>&nbsp;130&euro;</small>
-                      </div>
-                    </div>
-                    <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
-                        
-
-                        <h3 class="white">Based on Dan Armstrongs design, it's ring modulator / octave type effect, it's an aquired taste but has it's moments</h3>
-
-                        <hr class="mt-2 mx-3">
-                        
-                    
-                    <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>BUILD & PRICE</small></button></div>
-                </div>
-              </div>
-            </div>
-        </div>
-       
-
-
-    </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-<!-- Container (Services Section) -->
-<div id="blog" class="container-fluid text-center">
-  <h2>Blog</h2>
-  <h4>latest posts</h4>
-  <br>
-
-  <div class="well">
-      <div class="media">
-        <a class="pull-left" href="#">
-        <img class="media-object" src="img/case.jpg" width="200" height="200" object-fit: contain;>
-      </a>
-      <div class="media-body">
-        <h4 class="media-heading">One knob series on the way</h4>
-          <p class="text-right">By Billy</p>
-          <p>My first line of pedals are in the works, soon <br>&emsp;-Jfet boost <br>&emsp;-Jtm45<br>&emsp;-Muff fuzz<br>&emsp;-Green ringer <br>will be available for orders  </p>
-          <ul class="list-inline list-unstyled">
-        <li><span><i class="glyphicon glyphicon-calendar"></i>Friday 21 May 2021 </span></li>
-            <li>|</li>
-           
-      </ul>
-       </div>
-    </div>
-  </div>
-  
-  
-<div class="well">
-      <div class="media">
-        <a class="pull-left" href="#">
-        <img class="media-object" src="img/tap.jpg" width="200" height="200" object-fit: contain;>
-      </a>
-      <div class="media-body">
-        <h4 class="media-heading">Utility series ready</h4>
-          <p class="text-right">By Billy</p>
-          <p>Iv'e designed a couple of "utitlity" pedals <br>&emsp;-Tap/Channel sw <br>&emsp;-A/B sw <br>&emsp;-Fx on/off<br>&emsp;-Multi truebypass <br> soon will be available for orders  </p>
-          <ul class="list-inline list-unstyled">
-        <li><span><i class="glyphicon glyphicon-calendar"></i>Monday 10 May 2021 </span></li>
-            <li>|</li>
-           
-      </ul>
-       </div>
-    </div>
-  </div>
-
-  <div class="well">
-      <div class="media">
-      <a class="pull-left" href="#">
-        <img class="media-object" src="img/workbenchnew.jpg" width="200" height="200" object-fit: contain;>
-      </a>
-      <div class="media-body">
-        <h4 class="media-heading">Fuzz research</h4>
-          <p class="text-right">By Billy</p>
-          <p>Been recearching fuzz, I finally have a great fuzzfuce to comapre with my own fuzzes. Been going trough diffrent varaints to find the best flavor</p>
-          <ul class="list-inline list-unstyled">
-        <li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
-            <li>|</li>
-            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
-            <li>|</li>
-            <li>
-               <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star-empty"></span>
-            </li>
-            <li>|</li>
-            <li>
-            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
-              <span><i class="fa fa-facebook-square"></i></span>
-              <span><i class="fa fa-twitter-square"></i></span>
-              <span><i class="fa fa-google-plus-square"></i></span>
-            </li>
-      </ul>
-       </div>
-    </div>
-  </div>
-
-
-
-
-  <br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>Handwired</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>Handpicked components</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>Light weight</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
-  <br><br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
-</div>
-
-<!-- Container (Portfolio Section) -->
-<div id="about" class="container-fluid text-center bg-grey">
-  <h2 class="text-center">About me</h2>
-  
-
-
-</div>
-
-
-
-<!-- Container (Contact Section) -->
-
-<div id="contact" class="container-fluid">
-  <h2 class="text-center">CONTACT</h2>
-  <br><br><br><br><br><br>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Please get in touch for any questions and orders. Respond in one day, om on +1 gmt time. </p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Malmö, Sweden</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
-    </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Image of location/map -->
-<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
-
-<footer class="container-fluid text-center">
-  <a href="#myPage" title="To Top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
-  <p>Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a> 2022</p>
-</footer>
-
-<script src="js/custom.js"></script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-  
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-    });
-  });
-})
 </script>
 
+<style>
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+body {
+
+    
+    background-color: lightgray;
+    font-family: 'Lato';
+    color: black;
+    line-height: 1.5;
+    font-size: 100%;
+}
+
+
+a, a:hover, a:visited, a:active {
+  color: inherit;
+  text-decoration: inherit;
+  text-decoration: none;
+}
+
+img, iframe {
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+.wrapper {
+    width: 95%;
+    margin: 1.5em auto;
+}
+
+.masonry {
+    margin: 1.5em 0;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+}
+
+
+
+.item {
+    display: inline-block;
+    background: #fff;
+    padding: 1.5em;
+    margin: 0 0 1.5em;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+
+.masonry :hover {
+color: white;
+background-color: darkgrey;
+cursor: pointer;
+}
+	
+.disabled {
+  pointer-events: none; 
+}
+
+
+.large {
+  /*background: #084;*/
+  /*z-index: 1;*/
+}
+
+.title, .footer {
+text-align: center;
+}
+
+.title {
+font-size: 1.75em;
+margin: .25em 0;
+}
+
+.title a {
+display: inline-block;
+padding: .75em 1.25em;
+color: #888;
+border: 2px solid #aaa;
+margin: .25em 1em 1em;
+text-decoration: none;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+-ms-border-radius: 3px;
+-o-border-radius: 3px;
+}
+
+.test{
+    fill: red;
+}
+
+.title {
+
+}
+
+.title a:hover {
+color: #999;
+border-color: #888;
+}
+
+
+.share-link,
+.article-link {
+color: #888;
+}
+
+#author{
+    padding-left: 40px;
+}
+
+.carousel {
+  background: #FAFAFA;
+}
+
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+p.ex1 {
+  padding-left: 80px;
+}
+
+p {
+    font-size: 16px;
+}
+mark{
+
+    background-color: lightgrey;
+}
+@media only screen and (min-width: 700px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .masonry {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .wrapper {
+        width: 1260px;
+    }
+}</style></head>
+<body>
+
+<nav>
+</nav>
+	<div class="wrapper">
+	<div class="wrapper">
+	<div class="title">
+    	<img  width="350px" src="img/logo2.svg"></div>
+        <p id="author"> / iOS & Android developer / <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Billy Lundh</p>
+	<div class="masonry">
+        <div class="item disabled">
+           
+            <img src="img/profile2.jpg" />
+            <h2>About</h2>
+            <p>
+            Interaction designer specilized in web, iOS & Android front end and backend application development.
+		Passionate about userability and branding, typografy and logo designs.
+            </p>
+            <br>
+        </div>
+		
+		<div class="item disabled">
+			<img src="img/intervjuer2.PNG" />
+            <br>
+            <h3>Intervjuer iOS app</h3>
+            On a internship from the studies at Malmö Yrkeshögskola.
+            I was at Cybercom Group and was assigned to a startup project
+            with a classmate. 
+            We then went above and beyond with the application we develped and had 10 weeks,
+            which we spent well and learned how to architect a full-scale application. 
+            We learned how to handle video recording, user profiles, authentication and backend database integration with firebase and custom controls and interfaces.
+            We also made a real-time chat function. <br> <br>
+
+            During this time we also wanted to learn as much as we could
+            and made the interface without storyboards and completely programmatic. 
+
+            We did this in order to learn the parameters of 
+            functions better. And also scaling in-between different screen sizes
+		</div>
+		<div class="item">
+        <a target="_blank" href="http://www.bring4.com/">
+			<img src="img/intervjuer.png" />
+            <br>
+		<h3>Intervjuer react web app</h3>
+            As a continuation of the work done during the intership, the client wanted me to continue developing a web solution that
+		would work with the iOS application. I was able to record videos in browser to achive similiar functionality as the app.
+		Built with react and firebase backend.
+            </a>
+		</div>
+		
+		
+	<div class="item">
+		<a target="_blank" href="https://apps.apple.com/us/app/todo-hour/id1547362611">
+            <img src="img/todohour1.png" />
+            <h3>Todo Hour </h3>
+            A todo app that is intended to help with productivity. <h2>Available on appstore<h2>
+			
+			
+		</a>
+		
+        </div>
+	
+		
+        <div class="item disabled">
+            <img src="img/weatheribeacon.PNG" />
+            <br/>
+            <h3>iBeacon Weather app</h3>
+            An experimental ibeacon app that tests monitoring mode.
+            The idea is to have a beacon in the hallway and get notified
+            about the weather on my way out. <br><br>
+            I also managed to solve parsing data in a notification,
+            which I haven't seen before. It is very useful, because this means
+            you don't have to load up the app and get the relevant information 
+            straight away. When you want it.
+        </div>
+		
+		
+	
+		
+		<div class="item disabled">
+            <img src="img/knus.png" />
+            <h3>Café Knus Coffee card</h3>
+            <p>
+            A digital coffee card created for a café in Malmö.
+            The app let's users save up
+            and get the 10th cup for free. Special timed offers
+            are also offered in the app.
+            </p>
+        </div>
+		
+		<div class="item">
+			<a target="_blank" href="https://orionpedals.github.io/orion/">
+            <img src="img/logoorion2.png" />
+            <h3>Orion Electronics</h3>
+            <p>
+            A company I'm trying to get off the ground, makeing handwired guitar effects.
+            </p></a>
+        </div>
+		
+
+        <div class="item disabled">
+            <a target="_blank" href=""><img src="img/hodie.jpg" /></a>
+		<h3>The Reverb Hoodie</h3>
+            
+            As the winners of a local hackathon hosted at Minc, me and two friends
+            got 2 months of office time and a small sum of money to develop a concept 
+            that we conceived at the event.
+            Our concept was a smart hoodie, that would sense your pulse and the environment 
+            around you. Emf exposure and wifi signals. The hoodie does that and converts the sensors input 
+            to a responsive music program.<br><br> A arduino talks to a raspberry pi which has a script 
+            that runs pure data of the inputs and outputs music. I programmed this script and made the responsive music track. 
+
+        </div>
+		
+
+		<div class="item">
+			<p>Check out some of my music</p>
+			<br>
+			<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/42120281&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+		</div>
+		
+        <div class="item disabled">
+            <img src="img/pedalnew.png" />
+            <br/>
+            <h3>Pedal Collector</h3>
+	Keep track of your pedal collection.
+			<br>
+           Coming soon.
+        </div>
+		
+	
+        
+       
+
+	
+</div>	
+</div>
 </body>
 </html>
-
