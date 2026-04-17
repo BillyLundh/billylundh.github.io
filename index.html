@@ -1,105 +1,84 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 
 <title>Portfolio</title>
 
-<!-- Flickity CSS -->
-<link rel="stylesheet" href="flickety.css">
-
-<!-- Flickity JS -->
-<script src="flickity.pkgd.min.js"></script>
+<!-- Flickity (CDN so nothing breaks) -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <style>
-@import url(https://fonts.googleapis.com/css?family=Lato:300);
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
 
 body {
-    background-color: lightgray;
+    margin: 0;
     font-family: 'Lato';
-    color: black;
+    background: lightgray;
 }
 
-/* LINKS */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* IMAGES */
-img {
-  width: 100%;
-  display: block;
-  border-radius: 4px;
-}
-
-/* LAYOUT */
+/* WRAPPER */
 .wrapper {
     width: 95%;
-    margin: 1.5em auto;
+    margin: 20px auto;
 }
 
+/* GRID (THIS FIXES SPACING) */
 .masonry {
-    column-gap: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* 👈 guaranteed spacing */
 }
 
+/* CARDS */
 .item {
-    display: inline-block;
-    background: #fff;
-    padding: 1.5em;
-    margin: 0 0 1.5em;
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     width: 100%;
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
-    border-radius: 4px;
-    transition: 0.2s ease;
+    transition: 0.2s;
 }
 
 .item:hover {
-    background-color: #444;
-    color: white;
     transform: translateY(-3px);
+    background: #444;
+    color: white;
 }
 
-.title {
-    text-align: center;
+/* TEXT */
+h3 {
+    margin: 10px 0;
+    font-size: 16px;
 }
 
-#author {
-    padding-left: 40px;
+p {
+    font-size: 14px;
 }
 
 /* CAROUSEL */
 .carousel {
-    width: 100%;
+    margin-bottom: 10px;
 }
 
 .carousel img {
     width: 100%;
-}
-
-/* Flickity buttons */
-.flickity-button {
-    background: rgba(0,0,0,0.5);
-}
-
-.flickity-button:hover {
-    background: black;
-}
-
-.flickity-button-icon {
-    fill: white;
+    border-radius: 4px;
 }
 
 /* RESPONSIVE */
 @media (min-width: 700px) {
-    .masonry { column-count: 2; }
+    .item { width: calc(50% - 10px); }
 }
-@media (min-width: 900px) {
-    .masonry { column-count: 3; }
+
+@media (min-width: 1000px) {
+    .item { width: calc(33.33% - 14px); }
 }
-@media (min-width: 1100px) {
-    .masonry { column-count: 4; }
+
+@media (min-width: 1300px) {
+    .item { width: calc(25% - 15px); }
 }
 </style>
 </head>
@@ -108,58 +87,20 @@ img {
 
 <div class="wrapper">
 
-<div class="title">
-    <img width="350px" src="img/logo2.svg">
-</div>
-
-<p id="author"> / iOS & Android developer / <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Billy Lundh</p>
-
 <div class="masonry">
 
-<!-- ABOUT -->
-<div class="item">
-    <img src="img/profile2.jpg">
-    <h2>About</h2>
-    <p>
-    Interaction designer and developer specialized in web, iOS, and Android applications.
-    Focused on usability, performance, and clean design.
-    </p>
-</div>
-
-<!-- INTERVJUER IOS -->
+<!-- PROJECT 1 -->
 <div class="item">
     <div class="carousel">
         <img src="img/intervjuer1.png">
         <img src="img/intervjuer2.png">
         <img src="img/intervjuer3.png">
     </div>
-    <h3>Intervjuer iOS App</h3>
-    <p>Full iOS app with video recording and real-time chat.</p>
+    <h3>Intervjuer iOS</h3>
+    <p>iOS app with video recording and chat.</p>
 </div>
 
-<!-- INTERVJUER WEB -->
-<div class="item">
-<a href="http://www.bring4.com/" target="_blank">
-    <div class="carousel">
-        <img src="img/intervjuer.png">
-        <img src="img/intervjuer2.PNG">
-    </div>
-    <h3>Intervjuer React Web App</h3>
-    <p>React + Firebase platform with browser video recording.</p>
-</a>
-</div>
-
-<!-- KLINISK IOS -->
-<div class="item">
-    <div class="carousel">
-        <img src="img/klinisk-ios1.png">
-        <img src="img/klinisk-ios2.png">
-    </div>
-    <h3>Klinisk Handledning (iOS)</h3>
-    <p>Clinical supervision app for structured healthcare workflows.</p>
-</div>
-
-<!-- KLINISK ANDROID -->
+<!-- PROJECT 2 -->
 <div class="item">
     <div class="carousel">
         <img src="img/khandroid1.png">
@@ -167,62 +108,29 @@ img {
         <img src="img/khandroid3.png">
     </div>
     <h3>Klinisk Handledning (Android)</h3>
-    <p>Android version built with Kotlin focusing on usability.</p>
+    <p>Healthcare app built with Kotlin.</p>
 </div>
 
-<!-- TODO IOS -->
+<!-- PROJECT 3 -->
 <div class="item">
-<a href="https://apps.apple.com/us/app/todo-hour/id1547362611" target="_blank">
     <div class="carousel">
         <img src="img/todohour1.png">
     </div>
-    <h3>Todo Hour (iOS)</h3>
-    <p>Productivity-focused to-do app.</p>
-</a>
-</div>
-
-<!-- TODO ANDROID -->
-<div class="item">
-<a href="https://play.google.com/store/apps/details?id=com.embrace.todohour_final" target="_blank">
-    <div class="carousel">
-        <img src="img/unnamed-3.png">
-    </div>
-    <h3>Todo Hour (Android)</h3>
-    <p>Android version built with Kotlin.</p>
-</a>
-</div>
-
-<!-- ORION -->
-<div class="item">
-<a href="https://orionpedals.github.io/orion/" target="_blank">
-    <div class="carousel">
-        <img src="img/logoorion2.png">
-    </div>
-    <h3>Orion Electronics</h3>
-    <p>Handwired guitar effects and branding project.</p>
-</a>
-</div>
-
-<!-- MUSIC -->
-<div class="item">
-    <p>Check out my music</p>
-    <iframe width="100%" height="300"
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/42120281">
-    </iframe>
+    <h3>Todo Hour</h3>
+    <p>Productivity app.</p>
 </div>
 
 </div>
 </div>
 
-<!-- INIT FLICKITY -->
 <script>
 document.querySelectorAll('.carousel').forEach(carousel => {
     new Flickity(carousel, {
         cellAlign: 'left',
         contain: true,
         wrapAround: true,
-        pageDots: false,
-        prevNextButtons: true
+        prevNextButtons: true,
+        pageDots: false
     });
 });
 </script>
