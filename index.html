@@ -6,14 +6,17 @@
 
 <title>Portfolio</title>
 
-<!-- Flickity CDN -->
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+
+<!-- FLICKITY -->
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
     background: lightgray;
 }
 
@@ -39,6 +42,8 @@ body {
     width: 100%;
     box-sizing: border-box;
     transition: 0.2s;
+    display: flex;
+    flex-direction: column;
 }
 
 .item:hover {
@@ -80,10 +85,12 @@ p {
 
 .carousel img {
     width: 100%;
+    max-height: 250px;   /* FIX SIZE */
+    object-fit: cover;   /* KEEP NICE CROPPING */
     border-radius: 4px;
 }
 
-/* Flickity buttons */
+/* FLICKITY BUTTONS */
 .flickity-button {
     background: rgba(0,0,0,0.5);
 }
@@ -123,7 +130,7 @@ p {
     Built during an internship at Cybercom. A full-scale iOS application developed in 10 weeks.
     </p>
     <p>
-    Features include video recording, authentication, Firebase backend integration, and real-time chat.
+    Includes video recording, Firebase backend, authentication and real-time chat.
     </p>
 </div>
 
@@ -135,10 +142,7 @@ p {
     </div>
     <h3>Intervjuer React Web App</h3>
     <p>
-    Web version of the Intervjuer platform built with React and Firebase.
-    </p>
-    <p>
-    Supports browser-based video recording and integrates with the same backend as the mobile app.
+    React + Firebase web platform with browser-based video recording.
     </p>
 </div>
 
@@ -152,9 +156,6 @@ p {
     <p>
     Clinical supervision app designed for structured healthcare workflows.
     </p>
-    <p>
-    Includes role-based access, documentation tools, and user-friendly interface for medical environments.
-    </p>
 </div>
 
 <!-- KLINISK ANDROID -->
@@ -166,10 +167,7 @@ p {
     </div>
     <h3>Klinisk Handledning (Android)</h3>
     <p>
-    Android version built with Kotlin focusing on performance and usability.
-    </p>
-    <p>
-    Designed to provide consistent cross-platform experience for clinical supervision.
+    Android version built with Kotlin focusing on usability and performance.
     </p>
 </div>
 
@@ -180,7 +178,7 @@ p {
     </div>
     <h3>Todo Hour (iOS)</h3>
     <p>
-    Productivity-focused to-do application designed to improve focus and organization.
+    Productivity-focused to-do application.
     </p>
 </div>
 
@@ -191,7 +189,7 @@ p {
     </div>
     <h3>Todo Hour (Android)</h3>
     <p>
-    Android version built using Kotlin with focus on smooth UX and performance.
+    Android version built using Kotlin.
     </p>
 </div>
 
