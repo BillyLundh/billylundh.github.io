@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" href="flickety.css" media="screen">
 
 <title>Portfolio</title>
 
+<!-- Flickity CSS -->
+<link rel="stylesheet" href="flickety.css">
+
+<!-- Flickity JS -->
 <script src="flickity.pkgd.min.js"></script>
-<script src="custom.js"></script>
 
 <style>
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
@@ -17,7 +19,6 @@ body {
     background-color: lightgray;
     font-family: 'Lato';
     color: black;
-    line-height: 1.5;
 }
 
 /* LINKS */
@@ -27,10 +28,10 @@ a {
 }
 
 /* IMAGES */
-img, iframe {
-  max-width: 100%;
-  height: auto;
+img {
+  width: 100%;
   display: block;
+  border-radius: 4px;
 }
 
 /* LAYOUT */
@@ -39,39 +40,27 @@ img, iframe {
     margin: 1.5em auto;
 }
 
-/* MASONRY */
 .masonry {
-    margin: 1.5em 0;
-    padding: 0;
     column-gap: 1.5em;
 }
 
-/* CARDS */
 .item {
     display: inline-block;
     background: #fff;
     padding: 1.5em;
-    margin: 0 0 1.5em; /* FIXED spacing */
+    margin: 0 0 1.5em;
     width: 100%;
-    box-sizing: border-box;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
     border-radius: 4px;
     transition: 0.2s ease;
 }
 
-/* HOVER FIX */
 .item:hover {
     background-color: #444;
     color: white;
     transform: translateY(-3px);
 }
 
-/* DISABLED */
-.disabled {
-  pointer-events: none; 
-}
-
-/* HEADER */
 .title {
     text-align: center;
 }
@@ -80,9 +69,26 @@ img, iframe {
     padding-left: 40px;
 }
 
-/* TEXT */
-p {
-    font-size: 16px;
+/* CAROUSEL */
+.carousel {
+    width: 100%;
+}
+
+.carousel img {
+    width: 100%;
+}
+
+/* Flickity buttons */
+.flickity-button {
+    background: rgba(0,0,0,0.5);
+}
+
+.flickity-button:hover {
+    background: black;
+}
+
+.flickity-button-icon {
+    fill: white;
 }
 
 /* RESPONSIVE */
@@ -111,210 +117,115 @@ p {
 <div class="masonry">
 
 <!-- ABOUT -->
-<div class="item disabled">
-    <img src="img/profile2.jpg" />
+<div class="item">
+    <img src="img/profile2.jpg">
     <h2>About</h2>
     <p>
     Interaction designer and developer specialized in web, iOS, and Android applications.
-
-    I build clean, scalable, and user-friendly products with strong focus on usability, performance, and design.
-
-    Experience includes frontend and backend development, Firebase integrations, and full product development from idea to launch.
+    Focused on usability, performance, and clean design.
     </p>
 </div>
 
 <!-- INTERVJUER IOS -->
-<div class="item disabled">
-    <div class="slideshow">
-        <img src="img/intervjuer2.PNG">
+<div class="item">
+    <div class="carousel">
         <img src="img/intervjuer1.png">
         <img src="img/intervjuer2.png">
         <img src="img/intervjuer3.png">
     </div>
-    <img src="img/khandroid3.png">
-    <img src="img/intervjuer2.PNG" />
     <h3>Intervjuer iOS App</h3>
-    <p>
-    Built during an internship at Cybercom as part of a startup project.
-
-    A full iOS application developed in 10 weeks featuring video recording, authentication, and real-time chat.
-
-    Built fully programmatically (no storyboards) to improve scalability and understanding of UI architecture.
-
-    Technologies: Swift, Firebase, real-time database.
-    </p>
+    <p>Full iOS app with video recording and real-time chat.</p>
 </div>
 
 <!-- INTERVJUER WEB -->
 <div class="item">
-<a target="_blank" href="http://www.bring4.com/">
-    <img src="img/intervjuer.png" />
+<a href="http://www.bring4.com/" target="_blank">
+    <div class="carousel">
+        <img src="img/intervjuer.png">
+        <img src="img/intervjuer2.PNG">
+    </div>
     <h3>Intervjuer React Web App</h3>
-    <p>
-    Web version of the Intervjuer platform built with React and Firebase.
-
-    Allows browser-based video recording and integrates with the same backend as the mobile app.
-
-    Focus on performance, usability, and responsive design.
-    </p>
+    <p>React + Firebase platform with browser video recording.</p>
 </a>
 </div>
 
-
+<!-- KLINISK IOS -->
 <div class="item">
-    <img src="img/khandroid1.png" />
+    <div class="carousel">
+        <img src="img/klinisk-ios1.png">
+        <img src="img/klinisk-ios2.png">
+    </div>
     <h3>Klinisk Handledning (iOS)</h3>
-    <p>
-    A mobile application developed for clinical supervision and structured guidance within healthcare environments.
-
-    The app supports supervisors and students by enabling structured communication, documentation, and follow-up during clinical practice.
-
-    Features:
-    - User authentication and role-based access
-    - Structured guidance workflows
-    - Data storage and synchronization
-    - Clean and accessible UI for healthcare use
-
-    Built using Swift with a focus on usability, reliability, and clear information flow.
-    </p>
+    <p>Clinical supervision app for structured healthcare workflows.</p>
 </div>
 
+<!-- KLINISK ANDROID -->
 <div class="item">
-    <div class="slideshow">
-    <img src="img/khandroid1.png">
-    <img src="img/khandroid2.png">
-    <img src="img/khandroid3.png">
-    <img src="img/khandroid4.png">
-</div>
-    
+    <div class="carousel">
+        <img src="img/khandroid1.png">
+        <img src="img/khandroid2.png">
+        <img src="img/khandroid3.png">
+    </div>
     <h3>Klinisk Handledning (Android)</h3>
-    <p>
-    Android version of the Klinisk Handledning application, designed to provide the same structured support for clinical supervision.
-
-    Focused on delivering a consistent cross-platform experience while following Android best practices.
-
-    Features:
-    - Native Android development with Kotlin
-    - Role-based user flows
-    - Secure data handling
-    - Responsive and accessible interface
-
-    Built to ensure performance and usability across a wide range of Android devices.
-    </p>
+    <p>Android version built with Kotlin focusing on usability.</p>
 </div>
 
 <!-- TODO IOS -->
 <div class="item">
-<a target="_blank" href="https://apps.apple.com/us/app/todo-hour/id1547362611">
-    <img src="img/todohour1.png" />
+<a href="https://apps.apple.com/us/app/todo-hour/id1547362611" target="_blank">
+    <div class="carousel">
+        <img src="img/todohour1.png">
+    </div>
     <h3>Todo Hour (iOS)</h3>
-    <p>
-    Productivity-focused to-do app designed to improve focus and organization.
-
-    Features clean UI, structured task management, and time-based workflows.
-
-    Available on the App Store.
-    </p>
+    <p>Productivity-focused to-do app.</p>
 </a>
 </div>
 
 <!-- TODO ANDROID -->
 <div class="item">
-<a target="_blank" href="https://play.google.com/store/apps/details?id=com.embrace.todohour_final">
-    <img src="img/unnamed-3.png" />
+<a href="https://play.google.com/store/apps/details?id=com.embrace.todohour_final" target="_blank">
+    <div class="carousel">
+        <img src="img/unnamed-3.png">
+    </div>
     <h3>Todo Hour (Android)</h3>
-    <p>
-    Android version built with Kotlin.
-
-    Focused on performance, smooth UX, and consistency across platforms.
-    </p>
+    <p>Android version built with Kotlin.</p>
 </a>
-</div>
-
-<!-- IBEACON -->
-<div class="item disabled">
-    <img src="img/weatheribeacon.PNG" />
-    <h3>iBeacon Weather App</h3>
-    <p>
-    Experimental iOS app using iBeacon technology.
-
-    Sends weather notifications automatically when leaving home.
-
-    Demonstrates background processing and smart notification design.
-    </p>
-</div>
-
-<!-- KNUS -->
-<div class="item disabled">
-    <img src="img/knus.png" />
-    <h3>Café Knus App</h3>
-    <p>
-    Digital loyalty card for a café in Malmö.
-
-    Users collect stamps and receive rewards with a simple and intuitive interface.
-    </p>
 </div>
 
 <!-- ORION -->
 <div class="item">
-<a target="_blank" href="https://orionpedals.github.io/orion/">
-    <img src="img/logoorion2.png" />
+<a href="https://orionpedals.github.io/orion/" target="_blank">
+    <div class="carousel">
+        <img src="img/logoorion2.png">
+    </div>
     <h3>Orion Electronics</h3>
-    <p>
-    Personal project building handwired guitar pedals.
-
-    Combines electronics, product design, and branding.
-    </p>
+    <p>Handwired guitar effects and branding project.</p>
 </a>
-</div>
-
-<!-- HOODIE -->
-<div class="item disabled">
-    <img src="img/hodie.jpg" />
-    <h3>The Reverb Hoodie</h3>
-    <p>
-    Hackathon-winning project: a smart hoodie that converts sensor data into music.
-
-    Built using Arduino, Raspberry Pi, and Pure Data.
-
-    I developed the audio system and responsive sound logic.
-    </p>
 </div>
 
 <!-- MUSIC -->
 <div class="item">
-    <p>Check out some of my music</p>
-    <iframe width="100%" height="450" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/42120281"></iframe>
-</div>
-
-<!-- REACT TODO -->
-<div class="item">
-<a target="_blank" href="https://loving-elion-f49641.netlify.app">
-    <img src="img/reacttodo.png" />
-    <h3>React Todo App</h3>
-    <p>
-    Drag-and-drop todo application built with React.
-
-    Focus on interactive UI and responsive layout.
-    </p>
-</a>
-</div>
-
-<!-- CODEPEN -->
-<div class="item">
-<a target="_blank" href="https://unruffled-mccarthy-2792ce.netlify.app">
-    <img src="img/reactcodepen.png" />
-    <h3>CodePen Clone</h3>
-    <p>
-    Code editor built with React and CodeMirror.
-
-    Supports live editing of HTML, CSS, and JavaScript.
-    </p>
-</a>
+    <p>Check out my music</p>
+    <iframe width="100%" height="300"
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/42120281">
+    </iframe>
 </div>
 
 </div>
 </div>
+
+<!-- INIT FLICKITY -->
+<script>
+document.querySelectorAll('.carousel').forEach(carousel => {
+    new Flickity(carousel, {
+        cellAlign: 'left',
+        contain: true,
+        wrapAround: true,
+        pageDots: false,
+        prevNextButtons: true
+    });
+});
+</script>
 
 </body>
 </html>
