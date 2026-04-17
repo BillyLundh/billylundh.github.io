@@ -8,10 +8,13 @@ body {
 
 .profile-img {
     width: 100%;
-    max-width: 200px;   /* 👈 controls size */
+    max-width: 140px;   /* 👈 smaller (was 200px) */
     height: auto;
-    margin: 0 auto 10px; /* center it */
-    border-radius: 50%;  /* 👈 optional: makes it circular */
+    margin: 0 auto 10px;
+    display: block;
+
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 /* KEEP YOUR ORIGINAL MASONRY */
