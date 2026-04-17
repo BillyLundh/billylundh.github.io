@@ -1,27 +1,112 @@
-.masonry { 
-  display: flex;
-  flex-flow: row wrap;
-  margin-left: -8px; /* Adjustment for the gutter */
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+body {
+    background-color: lightgray;
+    font-family: 'Lato';
+    color: black;
+    line-height: 1.5;
 }
 
-.masonry-brick {
-  flex: auto;
-  height: 250px;
-  min-width: 150px;
-  margin: 0 8px 8px 0; /* Some gutter */
+/* LINKS */
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.masonry-brick {
-  &:nth-child(4n+1){
-     width: 250px;
-  }
-  &:nth-child(4n+2){
-     width: 325px;
-  }
-  &:nth-child(4n+3){
-     width: 180px;
-  }
-  &:nth-child(4n+4){
-     width: 380px;
-  }
+/* IMAGES */
+img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+/* LAYOUT */
+.wrapper {
+    width: 95%;
+    margin: 1.5em auto;
+}
+
+/* MASONRY */
+.masonry {
+    margin: 1.5em 0;
+    column-gap: 1.5em;
+}
+
+/* CARDS */
+.item {
+    display: inline-block;
+    background: #fff;
+    padding: 1.2em; /* slightly smaller */
+    margin: 0 0 1.5em;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    transition: 0.2s ease;
+}
+
+.item:hover {
+    background-color: #444;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* TEXT FIX */
+h2 {
+    font-size: 20px;
+    margin: 10px 0 5px;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+}
+
+p {
+    font-size: 14px; /* FIX: smaller text */
+    margin: 5px 0;
+}
+
+/* HEADER */
+.title {
+    text-align: center;
+}
+
+#author {
+    padding-left: 40px;
+    font-size: 14px;
+}
+
+/* CAROUSEL FIX */
+.carousel {
+    width: 100%;
+    margin-bottom: 10px; /* spacing below images */
+}
+
+.carousel img {
+    width: 100%;
+}
+
+/* Flickity buttons */
+.flickity-button {
+    background: rgba(0,0,0,0.4);
+}
+
+.flickity-button:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.flickity-button-icon {
+    fill: white;
+}
+
+/* RESPONSIVE */
+@media (min-width: 700px) {
+    .masonry { column-count: 2; }
+}
+@media (min-width: 900px) {
+    .masonry { column-count: 3; }
+}
+@media (min-width: 1100px) {
+    .masonry { column-count: 4; }
 }
