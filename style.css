@@ -1,3 +1,22 @@
+/* FONT */
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+/* IMAGE CONTROL */
+.carousel img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* CLEAN CARD */
+.item {
+    display: flex;
+    flex-direction: column;
+}
+
 /* WRAPPER */
 .wrapper {
   width: 95%;
