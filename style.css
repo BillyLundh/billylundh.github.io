@@ -9,57 +9,39 @@ body {
 /* WRAPPER */
 .wrapper {
     width: 95%;
-    margin: 1.5em auto;
+    margin: 20px auto;
 }
 
-/* FLEX GRID (REPLACES MASONRY) */
+/* GRID (NOT columns anymore) */
 .masonry {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5em; /* 👈 REAL spacing fix */
+    gap: 20px; /* 👈 THIS GUARANTEES spacing */
 }
 
 /* ITEMS */
 .item {
-    background: #fff;
-    padding: 1.2em;
-    border-radius: 4px;
-    box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
-    transition: 0.2s ease;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: 0.2s;
 
-    /* responsive widths */
     width: 100%;
 }
 
-/* HOVER */
 .item:hover {
-    background-color: #444;
+    background: #444;
     color: white;
-    transform: translateY(-2px);
 }
 
 /* TEXT */
-h2 {
-    font-size: 20px;
-    margin: 10px 0 5px;
-}
-
 h3 {
     font-size: 16px;
-    margin: 10px 0 5px;
+    margin: 10px 0;
 }
 
 p {
-    font-size: 14px;
-}
-
-/* HEADER */
-.title {
-    text-align: center;
-}
-
-#author {
-    padding-left: 40px;
     font-size: 14px;
 }
 
@@ -71,31 +53,17 @@ p {
 
 .carousel img {
     width: 100%;
-    border-radius: 4px;
 }
 
-/* Flickity buttons */
-.flickity-button {
-    background: rgba(0,0,0,0.4);
-}
-
-.flickity-button:hover {
-    background: rgba(0,0,0,0.7);
-}
-
-.flickity-button-icon {
-    fill: white;
-}
-
-/* RESPONSIVE GRID */
+/* RESPONSIVE */
 @media (min-width: 700px) {
-    .item { width: calc(50% - 0.75em); }
+    .item { width: calc(50% - 10px); }
 }
 
-@media (min-width: 900px) {
-    .item { width: calc(33.333% - 1em); }
+@media (min-width: 1000px) {
+    .item { width: calc(33.33% - 14px); }
 }
 
-@media (min-width: 1100px) {
-    .item { width: calc(25% - 1.2em); }
+@media (min-width: 1300px) {
+    .item { width: calc(25% - 15px); }
 }
