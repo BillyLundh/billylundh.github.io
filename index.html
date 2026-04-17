@@ -20,58 +20,72 @@ body {
     line-height: 1.5;
 }
 
-a, a:hover, a:visited, a:active {
+/* LINKS */
+a {
   color: inherit;
   text-decoration: none;
 }
 
+/* IMAGES */
 img, iframe {
-max-width: 100%;
-height: auto;
-display: block;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
+/* LAYOUT */
 .wrapper {
     width: 95%;
     margin: 1.5em auto;
 }
 
+/* MASONRY */
 .masonry {
+    margin: 1.5em 0;
+    padding: 0;
     column-gap: 1.5em;
 }
 
+/* CARDS */
 .item {
     display: inline-block;
     background: #fff;
     padding: 1.5em;
-    margin-bottom: 1.5em;
+    margin: 0 0 1.5em; /* FIXED spacing */
     width: 100%;
+    box-sizing: border-box;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
     border-radius: 4px;
+    transition: 0.2s ease;
 }
 
-.masonry :hover {
+/* HOVER FIX */
+.item:hover {
+    background-color: #444;
     color: white;
-    background-color: darkgrey;
-    cursor: pointer;
+    transform: translateY(-3px);
 }
 
+/* DISABLED */
 .disabled {
   pointer-events: none; 
 }
 
-.title, .footer {
-text-align: center;
+/* HEADER */
+.title {
+    text-align: center;
 }
 
-#author{
+#author {
     padding-left: 40px;
 }
 
+/* TEXT */
 p {
     font-size: 16px;
 }
 
+/* RESPONSIVE */
 @media (min-width: 700px) {
     .masonry { column-count: 2; }
 }
@@ -87,6 +101,7 @@ p {
 <body>
 
 <div class="wrapper">
+
 <div class="title">
     <img width="350px" src="img/logo2.svg">
 </div>
@@ -102,9 +117,9 @@ p {
     <p>
     Interaction designer and developer specialized in web, iOS, and Android applications.
 
-    I focus on building clean, scalable, and user-friendly products with strong attention to usability, branding, and performance.
+    I build clean, scalable, and user-friendly products with strong focus on usability, performance, and design.
 
-    Experience includes frontend and backend development, Firebase integrations, and designing complete digital experiences from concept to production.
+    Experience includes frontend and backend development, Firebase integrations, and full product development from idea to launch.
     </p>
 </div>
 
@@ -113,17 +128,13 @@ p {
     <img src="img/intervjuer2.PNG" />
     <h3>Intervjuer iOS App</h3>
     <p>
-    Developed during an internship at Cybercom Group as part of a startup project.
+    Built during an internship at Cybercom as part of a startup project.
 
-    Together with a classmate, we built a full-scale iOS application in 10 weeks.
+    A full iOS application developed in 10 weeks featuring video recording, authentication, and real-time chat.
 
-    Features:
-    - Video recording and playback
-    - Firebase authentication and database
-    - Real-time chat system
-    - Fully programmatic UI (no storyboards)
+    Built fully programmatically (no storyboards) to improve scalability and understanding of UI architecture.
 
-    This project gave me strong experience in app architecture, scalable UI design, and handling complex media workflows.
+    Technologies: Swift, Firebase, real-time database.
     </p>
 </div>
 
@@ -133,16 +144,11 @@ p {
     <img src="img/intervjuer.png" />
     <h3>Intervjuer React Web App</h3>
     <p>
-    A web-based extension of the Intervjuer platform built with React and Firebase.
+    Web version of the Intervjuer platform built with React and Firebase.
 
-    Allows users to record video directly in the browser and interact with the same backend as the mobile app.
+    Allows browser-based video recording and integrates with the same backend as the mobile app.
 
-    Focus areas:
-    - Browser-based video recording
-    - Responsive design
-    - Full-stack integration with Firebase
-
-    Built to mirror mobile functionality in a web environment.
+    Focus on performance, usability, and responsive design.
     </p>
 </a>
 </div>
@@ -153,12 +159,9 @@ p {
     <img src="img/todohour1.png" />
     <h3>Todo Hour (iOS)</h3>
     <p>
-    A productivity-focused to-do application designed to help users stay organized and focused.
+    Productivity-focused to-do app designed to improve focus and organization.
 
-    Features:
-    - Clean UI
-    - Task prioritization
-    - Time-based workflow
+    Features clean UI, structured task management, and time-based workflows.
 
     Available on the App Store.
     </p>
@@ -171,9 +174,9 @@ p {
     <img src="img/unnamed-3.png" />
     <h3>Todo Hour (Android)</h3>
     <p>
-    Android version of Todo Hour built using Kotlin.
+    Android version built with Kotlin.
 
-    Focus on performance, smooth UX, and consistency with the iOS version.
+    Focused on performance, smooth UX, and consistency across platforms.
     </p>
 </a>
 </div>
@@ -183,11 +186,11 @@ p {
     <img src="img/weatheribeacon.PNG" />
     <h3>iBeacon Weather App</h3>
     <p>
-    Experimental iOS project exploring iBeacon technology.
+    Experimental iOS app using iBeacon technology.
 
-    Sends weather notifications when leaving home using beacon detection.
+    Sends weather notifications automatically when leaving home.
 
-    Demonstrates background processing and delivering useful data without opening the app.
+    Demonstrates background processing and smart notification design.
     </p>
 </div>
 
@@ -196,11 +199,9 @@ p {
     <img src="img/knus.png" />
     <h3>Café Knus App</h3>
     <p>
-    Digital loyalty card app for a café in Malmö.
+    Digital loyalty card for a café in Malmö.
 
-    Users collect stamps and receive rewards such as free coffee.
-
-    Includes promotions and simple UX design.
+    Users collect stamps and receive rewards with a simple and intuitive interface.
     </p>
 </div>
 
@@ -210,9 +211,9 @@ p {
     <img src="img/logoorion2.png" />
     <h3>Orion Electronics</h3>
     <p>
-    Personal business project focused on building handwired guitar effects.
+    Personal project building handwired guitar pedals.
 
-    Combines electronics, branding, and product design.
+    Combines electronics, product design, and branding.
     </p>
 </a>
 </div>
@@ -222,13 +223,11 @@ p {
     <img src="img/hodie.jpg" />
     <h3>The Reverb Hoodie</h3>
     <p>
-    Hackathon-winning project developed with a team.
+    Hackathon-winning project: a smart hoodie that converts sensor data into music.
 
-    A smart hoodie that converts sensor data (pulse, EMF, WiFi) into music.
+    Built using Arduino, Raspberry Pi, and Pure Data.
 
-    Built using Arduino + Raspberry Pi + Pure Data.
-
-    I developed the sound system and responsive audio logic.
+    I developed the audio system and responsive sound logic.
     </p>
 </div>
 
@@ -244,9 +243,9 @@ p {
     <img src="img/reacttodo.png" />
     <h3>React Todo App</h3>
     <p>
-    Drag-and-drop todo app built with React.
+    Drag-and-drop todo application built with React.
 
-    Focused on interactive UI and responsive layout.
+    Focus on interactive UI and responsive layout.
     </p>
 </a>
 </div>
@@ -257,7 +256,7 @@ p {
     <img src="img/reactcodepen.png" />
     <h3>CodePen Clone</h3>
     <p>
-    A simplified CodePen-like editor built with React and CodeMirror.
+    Code editor built with React and CodeMirror.
 
     Supports live editing of HTML, CSS, and JavaScript.
     </p>
