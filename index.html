@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
@@ -15,67 +15,44 @@
 
 <style>
 body {
-    margin: 0;
+    background-color: lightgray;
     font-family: 'Lato', sans-serif;
-    background: lightgray;
+    margin: 0;
 }
 
 /* WRAPPER */
 .wrapper {
     width: 95%;
-    margin: 20px auto;
+    margin: 1.5em auto;
 }
 
-/* GRID */
+/* ORIGINAL MASONRY (FIXED) */
 .masonry {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    column-gap: 1.5em;
 }
 
-/* CARD */
+/* ITEMS */
 .item {
-    background: white;
-    padding: 15px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    display: inline-block;
     width: 100%;
+    margin: 0 0 1.5em;
+    padding: 1.2em;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
     box-sizing: border-box;
-    transition: 0.2s;
-    display: flex;
-    flex-direction: column;
-}
 
-.item:hover {
-    transform: translateY(-3px);
-    background: #444;
-    color: white;
-}
-
-/* RESPONSIVE */
-@media (min-width: 700px) {
-    .item { width: calc(50% - 10px); }
-}
-@media (min-width: 1000px) {
-    .item { width: calc(33.33% - 14px); }
-}
-@media (min-width: 1300px) {
-    .item { width: calc(25% - 15px); }
+    break-inside: avoid;
 }
 
 /* TEXT */
-h2 {
-    margin: 0 0 10px;
-}
-
 h3 {
-    margin: 10px 0;
     font-size: 16px;
+    margin: 10px 0;
 }
 
 p {
     font-size: 14px;
-    margin: 5px 0;
 }
 
 /* CAROUSEL */
@@ -85,17 +62,35 @@ p {
 
 .carousel img {
     width: 100%;
-    max-height: 250px;   /* FIX SIZE */
-    object-fit: cover;   /* KEEP NICE CROPPING */
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    background: #f5f5f5;
     border-radius: 4px;
 }
 
-/* FLICKITY BUTTONS */
+/* FLICKITY FIX */
+.flickity-viewport {
+    width: 100%;
+}
+
+/* BUTTONS */
 .flickity-button {
     background: rgba(0,0,0,0.5);
 }
 .flickity-button-icon {
     fill: white;
+}
+
+/* RESPONSIVE */
+@media (min-width: 700px) {
+    .masonry { column-count: 2; }
+}
+@media (min-width: 900px) {
+    .masonry { column-count: 3; }
+}
+@media (min-width: 1100px) {
+    .masonry { column-count: 4; }
 }
 </style>
 </head>
@@ -114,7 +109,6 @@ p {
     <h3>About</h3>
     <p>
     Interaction designer and developer specialized in web, iOS, and Android applications.
-    Focused on usability, performance, and scalable architecture.
     </p>
 </div>
 
@@ -126,12 +120,7 @@ p {
         <img src="img/intervjuer3.png">
     </div>
     <h3>Intervjuer iOS App</h3>
-    <p>
-    Built during an internship at Cybercom. A full-scale iOS application developed in 10 weeks.
-    </p>
-    <p>
-    Includes video recording, Firebase backend, authentication and real-time chat.
-    </p>
+    <p>Full iOS application with video recording and chat.</p>
 </div>
 
 <!-- INTERVJUER WEB -->
@@ -141,9 +130,7 @@ p {
         <img src="img/intervjuer2.PNG">
     </div>
     <h3>Intervjuer React Web App</h3>
-    <p>
-    React + Firebase web platform with browser-based video recording.
-    </p>
+    <p>React + Firebase platform with browser video recording.</p>
 </div>
 
 <!-- KLINISK IOS -->
@@ -153,9 +140,7 @@ p {
         <img src="img/klinisk-ios2.png">
     </div>
     <h3>Klinisk Handledning (iOS)</h3>
-    <p>
-    Clinical supervision app designed for structured healthcare workflows.
-    </p>
+    <p>Clinical supervision app.</p>
 </div>
 
 <!-- KLINISK ANDROID -->
@@ -166,9 +151,7 @@ p {
         <img src="img/khandroid3.png">
     </div>
     <h3>Klinisk Handledning (Android)</h3>
-    <p>
-    Android version built with Kotlin focusing on usability and performance.
-    </p>
+    <p>Android version built with Kotlin.</p>
 </div>
 
 <!-- TODO IOS -->
@@ -177,9 +160,7 @@ p {
         <img src="img/todohour1.png">
     </div>
     <h3>Todo Hour (iOS)</h3>
-    <p>
-    Productivity-focused to-do application.
-    </p>
+    <p>Productivity app.</p>
 </div>
 
 <!-- TODO ANDROID -->
@@ -188,9 +169,7 @@ p {
         <img src="img/unnamed-3.png">
     </div>
     <h3>Todo Hour (Android)</h3>
-    <p>
-    Android version built using Kotlin.
-    </p>
+    <p>Kotlin version.</p>
 </div>
 
 <!-- ORION -->
@@ -199,24 +178,24 @@ p {
         <img src="img/logoorion2.png">
     </div>
     <h3>Orion Electronics</h3>
-    <p>
-    Personal project building handwired guitar effects.
-    </p>
+    <p>Handwired guitar effects.</p>
 </div>
 
 </div>
 </div>
 
 <script>
-document.querySelectorAll('.carousel').forEach(carousel => {
-    new Flickity(carousel, {
-        cellAlign: 'left',
-        contain: true,
-        wrapAround: true,
-        prevNextButtons: true,
-        pageDots: false
+window.onload = function() {
+    document.querySelectorAll('.carousel').forEach(carousel => {
+        new Flickity(carousel, {
+            cellAlign: 'center',
+            contain: true,
+            wrapAround: true,
+            prevNextButtons: true,
+            pageDots: false
+        });
     });
-});
+};
 </script>
 
 </body>
