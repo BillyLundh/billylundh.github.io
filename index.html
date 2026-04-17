@@ -6,16 +6,14 @@
 
 <title>Portfolio</title>
 
-<!-- Flickity (CDN so nothing breaks) -->
+<!-- Flickity CDN -->
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Lato:300');
-
 body {
     margin: 0;
-    font-family: 'Lato';
+    font-family: Arial, sans-serif;
     background: lightgray;
 }
 
@@ -25,20 +23,21 @@ body {
     margin: 20px auto;
 }
 
-/* GRID (THIS FIXES SPACING) */
+/* GRID */
 .masonry {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* 👈 guaranteed spacing */
+    gap: 20px;
 }
 
-/* CARDS */
+/* CARD */
 .item {
     background: white;
     padding: 15px;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     width: 100%;
+    box-sizing: border-box;
     transition: 0.2s;
 }
 
@@ -48,7 +47,22 @@ body {
     color: white;
 }
 
+/* RESPONSIVE */
+@media (min-width: 700px) {
+    .item { width: calc(50% - 10px); }
+}
+@media (min-width: 1000px) {
+    .item { width: calc(33.33% - 14px); }
+}
+@media (min-width: 1300px) {
+    .item { width: calc(25% - 15px); }
+}
+
 /* TEXT */
+h2 {
+    margin: 0 0 10px;
+}
+
 h3 {
     margin: 10px 0;
     font-size: 16px;
@@ -56,6 +70,7 @@ h3 {
 
 p {
     font-size: 14px;
+    margin: 5px 0;
 }
 
 /* CAROUSEL */
@@ -68,17 +83,12 @@ p {
     border-radius: 4px;
 }
 
-/* RESPONSIVE */
-@media (min-width: 700px) {
-    .item { width: calc(50% - 10px); }
+/* Flickity buttons */
+.flickity-button {
+    background: rgba(0,0,0,0.5);
 }
-
-@media (min-width: 1000px) {
-    .item { width: calc(33.33% - 14px); }
-}
-
-@media (min-width: 1300px) {
-    .item { width: calc(25% - 15px); }
+.flickity-button-icon {
+    fill: white;
 }
 </style>
 </head>
@@ -87,20 +97,67 @@ p {
 
 <div class="wrapper">
 
+<h2>/ iOS & Android developer / Billy Lundh</h2>
+
 <div class="masonry">
 
-<!-- PROJECT 1 -->
+<!-- ABOUT -->
+<div class="item">
+    <img src="img/profile2.jpg">
+    <h3>About</h3>
+    <p>
+    Interaction designer and developer specialized in web, iOS, and Android applications.
+    Focused on usability, performance, and scalable architecture.
+    </p>
+</div>
+
+<!-- INTERVJUER IOS -->
 <div class="item">
     <div class="carousel">
         <img src="img/intervjuer1.png">
         <img src="img/intervjuer2.png">
         <img src="img/intervjuer3.png">
     </div>
-    <h3>Intervjuer iOS</h3>
-    <p>iOS app with video recording and chat.</p>
+    <h3>Intervjuer iOS App</h3>
+    <p>
+    Built during an internship at Cybercom. A full-scale iOS application developed in 10 weeks.
+    </p>
+    <p>
+    Features include video recording, authentication, Firebase backend integration, and real-time chat.
+    </p>
 </div>
 
-<!-- PROJECT 2 -->
+<!-- INTERVJUER WEB -->
+<div class="item">
+    <div class="carousel">
+        <img src="img/intervjuer.png">
+        <img src="img/intervjuer2.PNG">
+    </div>
+    <h3>Intervjuer React Web App</h3>
+    <p>
+    Web version of the Intervjuer platform built with React and Firebase.
+    </p>
+    <p>
+    Supports browser-based video recording and integrates with the same backend as the mobile app.
+    </p>
+</div>
+
+<!-- KLINISK IOS -->
+<div class="item">
+    <div class="carousel">
+        <img src="img/klinisk-ios1.png">
+        <img src="img/klinisk-ios2.png">
+    </div>
+    <h3>Klinisk Handledning (iOS)</h3>
+    <p>
+    Clinical supervision app designed for structured healthcare workflows.
+    </p>
+    <p>
+    Includes role-based access, documentation tools, and user-friendly interface for medical environments.
+    </p>
+</div>
+
+<!-- KLINISK ANDROID -->
 <div class="item">
     <div class="carousel">
         <img src="img/khandroid1.png">
@@ -108,16 +165,45 @@ p {
         <img src="img/khandroid3.png">
     </div>
     <h3>Klinisk Handledning (Android)</h3>
-    <p>Healthcare app built with Kotlin.</p>
+    <p>
+    Android version built with Kotlin focusing on performance and usability.
+    </p>
+    <p>
+    Designed to provide consistent cross-platform experience for clinical supervision.
+    </p>
 </div>
 
-<!-- PROJECT 3 -->
+<!-- TODO IOS -->
 <div class="item">
     <div class="carousel">
         <img src="img/todohour1.png">
     </div>
-    <h3>Todo Hour</h3>
-    <p>Productivity app.</p>
+    <h3>Todo Hour (iOS)</h3>
+    <p>
+    Productivity-focused to-do application designed to improve focus and organization.
+    </p>
+</div>
+
+<!-- TODO ANDROID -->
+<div class="item">
+    <div class="carousel">
+        <img src="img/unnamed-3.png">
+    </div>
+    <h3>Todo Hour (Android)</h3>
+    <p>
+    Android version built using Kotlin with focus on smooth UX and performance.
+    </p>
+</div>
+
+<!-- ORION -->
+<div class="item">
+    <div class="carousel">
+        <img src="img/logoorion2.png">
+    </div>
+    <h3>Orion Electronics</h3>
+    <p>
+    Personal project building handwired guitar effects.
+    </p>
 </div>
 
 </div>
