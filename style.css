@@ -6,10 +6,9 @@ body {
 /* IMAGE CONTROL */
 .carousel img {
     width: 100%;
-    height: auto;          /* 👈 keeps natural ratio */
-    max-height: 500px;     /* 👈 allows taller images */
-    object-fit: contain;   /* 👈 no cropping */
-    background: #eee;      /* 👈 optional nice background */
+    height: 400px;         /* 👈 consistent height */
+    object-fit: contain;   /* 👈 keeps full phone visible */
+    background: #eee;
 }
 
 /* CLEAN CARD */
