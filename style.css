@@ -6,6 +6,14 @@ body {
     color: black;
 }
 
+.profile-img {
+    width: 100%;
+    max-width: 200px;   /* 👈 controls size */
+    height: auto;
+    margin: 0 auto 10px; /* center it */
+    border-radius: 50%;  /* 👈 optional: makes it circular */
+}
+
 /* KEEP YOUR ORIGINAL MASONRY */
 .wrapper {
     width: 95%;
