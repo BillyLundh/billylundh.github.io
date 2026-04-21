@@ -1,215 +1,549 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US" prefix="" class="">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+    	<link rel="stylesheet" href="flickety.css" media="screen">
 
-<title>Portfolio</title>
+	<title>Portfolio</title>
 
-<!-- FONT -->
-<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
 
-<!-- FLICKITY -->
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="flickity.pkgd.min.js"></script>
+
+<script src="custom.js"></script>
+
+<script>var script = function(src) {
+    var e = document.createElement('script');
+    e.async = true;
+    e.src = src;
+    document.getElementsByTagName('head')[0].appendChild(e);
+};
+
+var style = function(css) {
+    var e = document.createElement('style');
+    if(e.styleSheet){
+        e.styleSheet.cssText = css;
+    } else {
+        e.appendChild(document.createTextNode(css));
+    }
+    document.getElementsByTagName('head')[0].appendChild(e);
+};
+
+</script>
 
 <style>
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
 body {
-    margin: 0;
-    font-family: 'Lato', sans-serif;
-    background: lightgray;
+
+    
+    background-color: lightgray;
+    font-family: 'Lato';
+    color: black;
+    line-height: 1.5;
+    font-size: 100%;
 }
 
-/* HEADER */
-.header {
-    text-align: center;
-    padding: 20px;
+
+a, a:hover, a:visited, a:active {
+  color: inherit;
+  text-decoration: inherit;
+  text-decoration: none;
 }
 
-.header img {
-    width: 250px;
+img, iframe {
+max-width: 100%;
+height: auto;
+display: block;
 }
 
-.header p {
-    margin: 5px 0;
+.wrapper {
+    width: 95%;
+    margin: 1.5em auto;
 }
 
-/* GRID */
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 20px;
+.masonry {
+    margin: 1.5em 0;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
 }
 
-/* CARD */
+
+
 .item {
-    background: white;
-    padding: 15px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    transition: 0.2s;
+    display: inline-block;
+    background: #fff;
+    padding: 1.5em;
+    margin: 0 0 1.5em;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
 }
 
-.item:hover {
-    transform: translateY(-3px);
+
+.masonry :hover {
+color: white;
+background-color: darkgrey;
+cursor: pointer;
+}
+	
+.disabled {
+  pointer-events: none; 
 }
 
-/* TEXT */
-h3 {
-    margin: 10px 0;
-    font-size: 16px;
+
+.large {
+  /*background: #084;*/
+  /*z-index: 1;*/
+}
+
+.title, .footer {
+text-align: center;
+}
+
+.title {
+font-size: 1.75em;
+margin: .25em 0;
+}
+
+.title a {
+display: inline-block;
+padding: .75em 1.25em;
+color: #888;
+border: 2px solid #aaa;
+margin: .25em 1em 1em;
+text-decoration: none;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+-ms-border-radius: 3px;
+-o-border-radius: 3px;
+}
+
+.test{
+    fill: red;
+}
+
+.title {
+
+}
+
+.title a:hover {
+color: #999;
+border-color: #888;
+}
+
+
+.share-link,
+.article-link {
+color: #888;
+}
+
+#author{
+    padding-left: 40px;
+}
+
+.carousel {
+  background: #FAFAFA;
+}
+
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+p.ex1 {
+  padding-left: 80px;
 }
 
 p {
-    font-size: 14px;
+    font-size: 16px;
+}
+mark{
+
+    background-color: lightgrey;
+}
+@media only screen and (min-width: 700px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
 }
 
-/* CAROUSEL */
-.carousel {
-    margin-bottom: 10px;
+@media only screen and (min-width: 900px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
 }
 
-.carousel img {
-    width: 100%;
-    height: 420px;
-    object-fit: contain;
-    background: #f5f5f5;
-    border-radius: 4px;
+@media only screen and (min-width: 1100px) {
+    .masonry {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
 }
 
-/* FLICKITY */
-.flickity-button {
-    background: rgba(0,0,0,0.5);
-}
-.flickity-button-icon {
-    fill: white;
-}
-</style>
-</head>
-
+@media only screen and (min-width: 1280px) {
+    .wrapper {
+        width: 1260px;
+    }
+}</style></head>
 <body>
 
-<div class="header">
-    <img src="img/logo2.svg">
-    <p>/ iOS & Android developer /</p>
-    <p>Billy Lundh</p>
-</div>
+<nav>
+</nav>
+	<div class="wrapper">
+	<div class="wrapper">
+	<div class="title">
+    	<img  width="350px" src="img/logo2.svg"></div>
+        <p id="author"> / iOS & Android developer / <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Billy Lundh</p>
+	<div class="masonry">
+        <div class="item">
+		  <img src="img/profile2.jpg" />
 
-<div class="container">
+		  <h2>About</h2>
 
-<!-- ABOUT -->
-<div class="item">
-    <img src="img/profile2.jpg" class="profile-img>
-    <h3>About</h3>
+		  <p>
+			  Full-stack developer specializing in web and mobile applications, with experience 
+			  across iOS, Android, and modern web technologies.
+
+			  <br><br>
+
+			  Focused on building scalable, user-centered products with clean architecture 
+			  and strong attention to UX.
+
+			  <br><br>
+
+			  Combines technical implementation with design thinking to deliver polished 
+			  and effective solutions.
+			</p>
+		</div>
+		
+		<div class="item">
+		  <img src="img/intervjuer2.PNG" />
+		  <br>
+
+		  <h3>Intervjuer iOS App</h3>
+
+		  <p>
+		    Video interview and job matching platform with recording, chat, and user management.
+
+		    <br><br>
+
+		    <strong>Tech:</strong> Swift, Firebase, Realtime DB
+		  </p>
+
+		  <a href="project-intervjuer.html" class="view-btn">
+		    View Project →
+		  </a>
+		</div>
+
+
+	<div class="item">
+		  <img src="img/khios4.png" />
+
+		  <div class="item-content">
+		    <h3>Klinisk Handledning (iOS)</h3>
+
+		    <p>
+		      Clinical guidance platform for medical students with structured models and integrated patient survey tools.
+
+		      <br><br>
+
+		      <strong>Tech:</strong> Swift, Firebase
+		    </p>
+
+		    <p class="badge">Available on App Store</p>
+
+		    <a href="project-khios.html" class="view-btn">
+		      View Project →
+		    </a>
+		  </div>
+		</div>
+		
+		
+			<div class="item">
+			  <img src="img/todohour1.png" />
+
+			  <div class="item-content">
+			    <h3>Todo Hour (iOS)</h3>
+
+			    <p>
+			      Time-focused productivity app designed to improve focus and task completion.
+
+			      <br><br>
+
+			      <strong>Tech:</strong> Swift, UIKit
+			    </p>
+
+			    <p class="badge">Available on App Store</p>
+
+			    <!-- ✅ GOES TO PROJECT PAGE -->
+			    <a href="project-todohour.html" class="view-btn">
+			      View Project →
+			    </a>
+			  </div>
+			</div>
+
+		
+	
+		
+       <div class="item">
+		  <img src="img/weatheribeacon.PNG" />
+		  <br/>
+
+		  <h3>iBeacon Weather App</h3>
+
+		  <p>
+			  Location-triggered weather notifications using iBeacon technology.
+
+			  <br><br>
+
+			  Automatically provides relevant information when the user enters a space, 
+			  reducing the need for manual interaction.
+
+			  <br><br>
+
+			  <strong>Tech:</strong> Swift, CoreLocation (iBeacon), Local Notifications
+			</p>
+		</div>
+
+
+		
+		
+	
+		
+		<div class="item">
+		  <img src="img/knus.png" />
+
+		  <h3>Café Knus App</h3>
+
+		  <p>
+			  Mobile loyalty platform for a café with rewards, menu browsing, events, 
+			  and location-based features. For iOS and Android.
+
+			  <br><br>
+
+			  Users can track purchases, discover offers, and navigate to the café 
+			  through integrated map functionality.
+
+			  <br><br>
+
+			  <strong>Tech:</strong> Swift, Kotlin, Firebase, ITTT
+			</p>
+		</div>
+		<div class="item">
+		  <img src="img/khandroid3.png" />
+
+		  <div class="item-content">
+		    <h3>Klinisk Handledning (Android)</h3>
+
+		    <p>
+		      Clinical guidance platform for medical students with structured models 
+		      and integrated patient survey tools.
+
+		      <br><br>
+
+		      <strong>Tech:</strong> Kotlin, Firebase
+		    </p>
+
+		    <p class="badge">Android App</p>
+
+		    <a href="project-khandroid.html" class="view-btn">
+		      View Project →
+		    </a>
+		  </div>
+		</div>
+
+        <div class="item">
+		  <img src="img/hodie.jpg" />
+
+		  <h3>The Reverb Hoodie</h3>
+
+		  <p>
+		    Award-winning smart wearable that transforms biometric and environmental data 
+		    into real-time music using Pure Data.
+
+		    <br><br>
+
+		    Sensors capture pulse, EMF, and surrounding signals, which are processed 
+		    through a Raspberry Pi and translated into a dynamic audio experience.
+
+		    <br><br>
+
+		    <strong>Tech:</strong> Arduino, Raspberry Pi, Pure Data
+		  </p>
+
+		  <p class="badge">Hackathon Winner</p>
+		</div>
+
+		
+
+
+		
+		
+<!--
+		<div class="item">
+			<p>Check out some of my music</p>
+			<br>
+			<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/42120281&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+		</div>
+		
+        <div class="item">
+		  <img src="img/pedalnew.png" />
+		  <br/>
+
+		  <h3>Pedal Collector</h3>
+
+		  <p>
+			  Collection management app for guitar pedals, focused on organization, 
+			  categorization, and overview of gear setups.
+
+			  <br><br>
+
+			  Planned features include detailed pedal info, collection tracking, 
+			  and user-friendly browsing.
+
+			  <br><br>
+
+			  <strong>Status:</strong> In progress
+			</p>
+		</div>
+	-->
+
+	<div class="item">
+  <img src="img/h2.png" />
+
+  <div class="item-content">
+    <h3>Helplie iOS & Android</h3>
+
     <p>
-    Interaction designer specialized in web, iOS & Android development.
-    Focused on usability, performance and clean design.
+      Mobile application that aggregates and personalizes discounts across 
+      different locations and categories.
+
+      <br><br>
+
+      Helps users discover relevant deals based on preferences and nearby offers.
+
+      <br><br>
+
+      <strong>Tech:</strong> Swift, Kotlin, Firebase, Auth
     </p>
-</div>
 
-<!-- INTERVJUER IOS -->
-<div class="item">
-    <div class="carousel">
-        <img src="img/intervjuer1.png">
-        <img src="img/intervjuer2.png">
-        <img src="img/intervjuer3.png">
-    </div>
-    <h3>Intervjuer iOS App</h3>
-    <p>
-    Built during internship at Cybercom. Includes video recording, Firebase backend and real-time chat.
-    </p>
-</div>
+    <p class="badge">iOS & Android</p>
 
-<!-- INTERVJUER WEB -->
-<div class="item">
-    <div class="carousel">
-        <img src="img/intervjuer.png">
-        <img src="img/intervjuer2.PNG">
-    </div>
-    <h3>Intervjuer React Web App</h3>
-    <p>
-    Web version built with React and Firebase supporting browser video recording.
-    </p>
+    <a href="project-helplie.html" class="view-btn">
+      View Project →
+    </a>
+  </div>
 </div>
+	
+	<div class="item">
+	  <img src="img/reacttodo.png" />
 
-<!-- KLINISK IOS -->
-<div class="item">
-    <div class="carousel">
-        <img src="img/klinisk-ios1.png">
-        <img src="img/klinisk-ios2.png">
-    </div>
-    <h3>Klinisk Handledning (iOS)</h3>
-    <p>
-    Clinical supervision app for structured healthcare workflows.
-    </p>
-</div>
+	  <h3>Todo App (React)</h3>
 
-<!-- KLINISK ANDROID -->
-<div class="item">
-    <div class="carousel">
-        <img src="img/khandroid1.png">
-        <img src="img/khandroid2.png">
-        <img src="img/khandroid3.png">
-    </div>
-    <h3>Klinisk Handledning (Android)</h3>
-    <p>
-    Android version built with Kotlin focusing on usability and performance.
-    </p>
-</div>
+	  <p>
+	    Interactive todo application with drag-and-drop functionality 
+	    and responsive layout.
 
-<!-- TODO IOS -->
-<div class="item">
-    <div class="carousel">
-        <img src="img/todohour1.png">
-    </div>
-    <h3>Todo Hour (iOS)</h3>
-    <p>
-    Productivity app designed to improve focus and organization.
-    </p>
-</div>
+	    <br><br>
 
-<!-- TODO ANDROID -->
-<div class="item">
-    <div class="carousel">
-        <img src="img/unnamed-3.png">
-    </div>
-    <h3>Todo Hour (Android)</h3>
-    <p>
-    Android version built with Kotlin.
-    </p>
-</div>
+	    <strong>Tech:</strong> React, JavaScript, CSS
+	  </p>
 
-<!-- ORION -->
-<div class="item">
-    <div class="carousel">
-        <img src="img/logoorion2.png">
-    </div>
-    <h3>Orion Electronics</h3>
-    <p>
-    Handwired guitar effects and branding project.
-    </p>
-</div>
+	  <a 
+	    href="https://loving-elion-f49641.netlify.app"
+	    target="_blank"
+	    class="view-btn"
+	  >
+	    View Live →
+	  </a>
+	</div>
+	
+	<div class="item">
+		  <img src="img/reactcodepen.png" />
 
-<!-- MUSIC -->
-<div class="item">
-    <h3>Music</h3>
-    <iframe width="100%" height="300"
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/42120281">
-    </iframe>
-</div>
+		  <h3>CodePen Clone (React)</h3>
+
+		  <p>
+		    Browser-based code editor with live HTML, CSS, and JavaScript rendering.
+
+		    <br><br>
+
+		    <strong>Tech:</strong> React, CodeMirror, JavaScript
+		  </p>
+
+		  <a 
+		    href="https://unruffled-mccarthy-2792ce.netlify.app"
+		    target="_blank"
+		    class="view-btn"
+		  >
+		    View Live →
+		  </a>
+		</div>
+
+		<div class="item">
+		  <img src="img/greekstore.png" />
+
+		  <div class="item-content">
+		    <h3>Hellas food kitchen eCommerce</h3>
+
+		    <p>
+		      eCommerce website for a company selling Greek products such as olive oil 
+		      and specialty goods.
+
+		      <br><br>
+
+		      Designed to showcase products, streamline purchases, and create a clean 
+		      and trustworthy shopping experience.
+
+		      <br><br>
+
+		      <strong>Tech:</strong> Wix, CMS, eCommerce
+		    </p>
+
+		    <p class="badge">Live Site</p>
+
+		    <a href="https://your-site-link.com" target="_blank" class="view-btn">
+		      View Live →
+		    </a>
+		  </div>
+		</div>
+        
+       
+
+	
+</div>	
 
 </div>
 
-<script>
-document.querySelectorAll('.carousel').forEach(el => {
-    new Flickity(el, {
-        wrapAround: true,
-        prevNextButtons: true,
-        pageDots: false
-    });
-});
-</script>
 
 </body>
 </html>
