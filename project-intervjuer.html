@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intervjuer</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: lightgray;
+    }
+
+    .project-page {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+    }
+
+    h1, h3 {
+      margin-top: 30px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: #2563eb;
+    }
+
+    /* SLIDER */
+    .image-slider {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    .image-slider img {
+      width: 280px;
+      border-radius: 10px;
+    }
+
+    ul {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="project-page">
+
+  <a href="index.html" class="back-btn">← Back</a>
+
+  <h1>Intervjuer</h1>
+
+  <p>
+    Intervjuer is a video-based interview and job matching platform designed to 
+    streamline recruitment and job discovery. The system enables users to record 
+    video responses, complete structured interview flows, and communicate in real time.
+  </p>
+
+  <!-- IMAGES -->
+  <div class="image-slider">
+    <img src="img/intervjuer1.PNG">
+    <img src="img/intervjuer2.png">
+    <img src="img/intervjuer3.png">
+  </div>
+
+  <h3>Video Recording</h3>
+  <p>
+    A central feature of the platform is video-based responses. Users can record 
+    answers directly in the app, allowing employers to evaluate candidates more 
+    effectively than traditional text-based applications.
+  </p>
+
+  <h3>Forms & Interview Flow</h3>
+  <p>
+    The application includes structured forms and guided interview steps, ensuring 
+    a smooth and intuitive experience. Users progress through clearly defined stages, 
+    improving usability and consistency across interviews.
+  </p>
+
+  <h3>Real-Time Chat</h3>
+  <p>
+    A real-time chat system allows direct communication between users and recruiters. 
+    This was implemented using Firebase, enabling instant updates and seamless interaction.
+  </p>
+
+  <h3>Job Matching & Platform Vision</h3>
+  <p>
+    Beyond interviews, the platform was designed as a job discovery tool where users 
+    can connect with opportunities in a more dynamic way. By combining video, structured 
+    data, and communication, the system creates a richer hiring experience.
+  </p>
+
+  <h3>Web Integration</h3>
+  <p>
+    The platform was extended with a React-based web application sharing the same 
+    backend infrastructure. This allowed users to access similar functionality in 
+    the browser, including video recording and data synchronization across devices.
+  </p>
+
+  <h3>Tech Stack</h3>
+  <ul>
+    <li>Swift (iOS)</li>
+    <li>Firebase Authentication</li>
+    <li>Firebase Realtime Database</li>
+    <li>Video recording & media handling</li>
+    <li>React (web application)</li>
+  </ul>
+
+</div>
+
+</body>
+</html>

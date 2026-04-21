@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Helplie</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: lightgray;
+    }
+
+    .project-page {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: #2563eb;
+    }
+
+    h1, h3 {
+      margin-top: 30px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .image-slider {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    .image-slider img {
+      width: 280px;
+      border-radius: 10px;
+    }
+
+    ul {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="project-page">
+
+  <a href="index.html" class="back-btn">← Back</a>
+
+  <h1>Helplie iOS & Android</h1>
+
+  <p>
+    Discount is a cross-platform mobile application designed to help users 
+    discover relevant deals based on their location and personal preferences. 
+    The platform aggregates discounts from multiple sources and presents them 
+    in a simple and user-friendly interface.
+  </p>
+
+  <!-- IMAGES -->
+  <div class="image-slider">
+    <img src="img/h1.png">
+    <img src="img/h4.png">
+    <img src="img/h2.png">
+  </div>
+
+  <h3>Personalized Deals & Discovery</h3>
+  <p>
+    The application focuses on delivering relevant offers to users by combining 
+    location-based data with user preferences. This allows users to easily discover 
+    discounts that are meaningful to them without manually searching across different platforms.
+  </p>
+
+  <h3>Authentication & User Profiles</h3>
+  <p>
+    Firebase Authentication was used to manage user accounts, enabling secure login 
+    and personalized experiences. Each user can maintain preferences and interact 
+    with content tailored specifically to their interests.
+  </p>
+
+  <h3>Affiliate Links & Monetization</h3>
+  <p>
+    Discounts are connected to affiliate links, allowing users to access offers 
+    directly while enabling potential monetization through referral-based tracking. 
+    This creates a bridge between users and businesses while supporting a scalable 
+    business model.
+  </p>
+
+  <h3>Real-Time Data with Firebase</h3>
+  <p>
+    Firebase was used as the backend for storing and updating discount data in real time. 
+    This ensures that users always see the most up-to-date offers and allows for 
+    easy management of content across platforms.
+  </p>
+
+  <h3>Cross-Platform Development</h3>
+  <p>
+    The app was developed for both iOS and Android using Swift and Kotlin, 
+    sharing a common backend and data structure. This approach ensured consistency 
+    across platforms while maintaining native performance and user experience.
+  </p>
+
+  <h3>Tech Stack</h3>
+  <ul>
+    <li>Swift (iOS)</li>
+    <li>Kotlin (Android)</li>
+    <li>Firebase Authentication</li>
+    <li>Firebase Realtime Database / Firestore</li>
+    <li>Affiliate link integration</li>
+  </ul>
+
+</div>
+
+</body>
+</html>
