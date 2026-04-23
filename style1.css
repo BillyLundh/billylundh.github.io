@@ -1,0 +1,116 @@
+body {
+  font-family: 'Merriweather', serif;
+  background: #f7f5f0;
+  color: #111;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center 30%; /* 👈 adjust this */
+  border-radius: 50%;
+  border: 1.5px solid #dcd8d0;
+  padding: 3px;
+  background: #fff;
+}
+
+/* Layout width */
+.newspaper {
+  max-width: 1000px;
+}
+
+/* Masthead */
+.masthead {
+  border-bottom: 2px solid #000;
+}
+
+.masthead h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  letter-spacing: 3px;
+}
+
+.meta {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Left column divider */
+.left-col {
+  border-right: 1px solid #ddd;
+}
+
+/* Sections */
+section {
+  margin-bottom: 25px;
+}
+
+section h6 {
+  font-size: 12px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Lists */
+ul {
+  padding-left: 15px;
+  margin: 0;
+}
+
+li {
+  font-size: 14px;
+}
+
+/* Experience items */
+.item {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.sub {
+  font-size: 13px;
+  color: #555;
+}
+
+.date {
+  font-size: 12px;
+  color: #555;
+}
+
+/* Text */
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+/* PRINT (forces clean 2 pages) */
+@media print {
+  body {
+    background: white;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  .masthead {
+    page-break-after: avoid;
+  }
+}
